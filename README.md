@@ -3,7 +3,7 @@ Healthcare project for analysing and forecasting hourly hospital OPD patient dem
 
 The main objective is to understand patient arrival patterns, predict future patient demand, identify busy periods, which will help in better hospital resource planning.
 
-## 2. Dataset Description
+## 1. Dataset Description
 
 The project uses the **HospitalOPD** dataset published on Mendeley Data.
 
@@ -16,7 +16,7 @@ Dataset description:
 **Dataset source:**  
 https://data.mendeley.com/public-api/zip/j2hd2239dr/download/1
 
-## 3. Project Objectives
+## 2. Project Objectives
 
 1. Analyse historical OPD patient arrival patterns.
 2. Identify peak patient arrival hours and busy days.
@@ -26,7 +26,7 @@ https://data.mendeley.com/public-api/zip/j2hd2239dr/download/1
 6. Estimate prediction intervals and evaluate their coverage.
 7. Support hospital workload planning.
 
-## 4. Data Processing
+## 3. Data Processing
 
 The dataset is processed to prepare it for analysis and forecasting.
 
@@ -38,7 +38,7 @@ The planned processing steps include:
 - Aggregating patient arrivals into hourly counts.
 - Checking unusual timestamps and inconsistent records.
 
-## 5. Forecasting Models
+## 4. Forecasting Models
 
 The models are compared:
 
@@ -47,7 +47,7 @@ The models are compared:
 - **SARIMAX:** A statistical time-series forecasting model.
 - **Random Forest:** A machine learning model that combines predictions from multiple decision trees.
 
-## 6. Model Evaluation
+## 5. Model Evaluation
 
 The forecasting models are evaluated using:
 
@@ -57,7 +57,7 @@ The forecasting models are evaluated using:
 
 Random Forest achieved the lowest MAE and RMSE among the compared models and was selected as the preferred forecasting model.
 
-## 7. Prediction Intervals
+## 6. Prediction Intervals
 
 Prediction intervals represent a possible range around the predicted patient count.
 
@@ -70,7 +70,7 @@ The observed coverage was:
 
 SARIMAX achieved coverage closer to the nominal 90% target.
 
-## 8. Demand Classification
+## 7. Demand Classification
 The predicted hourly patient counts were classified into three demand categories using the first and third quartiles.
 
 Q1 (25th percentile): 2 patients
@@ -85,7 +85,7 @@ Q3 (75th percentile): 16 patients
 
 These classification rules were applied to 672 forecasted hours.
 
-## 9. Key Findings
+## 8. Key Findings
 
 The demand classification produced the following results:
 
@@ -108,18 +108,18 @@ The demand classification produced the following results:
 
 **Note:** The 122 additional potential busy-hour warnings identified using prediction intervals are separate from the 104 hours classified as High Demand.
 
-## 10. Dashboard (in Streamlit)
+## 9. Dashboard (in Streamlit)
 <img width="1912" height="867" alt="image" src="https://github.com/user-attachments/assets/dd1b8fcb-bde3-4edd-b94c-8d9f33b0b262" />
 
 Streamlit link: https://opd-peak-hour-prediction-babpcreismecqjf7jsjie5.streamlit.app/
 
-## 11. Conclusion
+## 10. Conclusion
 
 In this it uses machine learning and statistical forecasting methods to predict hourly patient arrivals in hospital OPDs. Random Forest performed best in terms of MAE and RMSE, while SARIMAX achieved prediction-interval coverage closer to the 90% target.
 
 Demand classification makes the predictions easier to understand by identifying Low, Normal, and High Demand periods. The dashboard helps hospital administrators plan staffing and resources during busy hours.
 
-## 12. Limitations and Future Improvements
+## 11. Limitations and Future Improvements
 
 Forecast accuracy depends on the quality and availability of historical data.
 
@@ -131,7 +131,7 @@ Future work can include more recent data and additional factors that influence p
 
 The forecasting models can be improved through further tuning and evaluation.
 
-## 13. Tools and Technologies
+## 12. Tools and Technologies
 
 Python
 
@@ -149,6 +149,6 @@ Jupyter Notebook
 
 Dashboard
 
-## 14. Project Outputs
+## 13. Project Outputs
 The project produces hourly patient arrival forecasts, prediction intervals, demand categories and peak-hour warnings. These outputs support the monitoring and planning of patient demand in hospital OPDs.
 
