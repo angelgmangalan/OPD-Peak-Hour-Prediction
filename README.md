@@ -70,29 +70,85 @@ The observed coverage was:
 
 SARIMAX achieved coverage closer to the nominal 90% target.
 
-## 8. Limitations
+## 8. Demand Classification
+The predicted hourly patient counts were classified into three demand categories using the first and third quartiles.
 
-- It not confirms that the dataset is real or synthetic data.
-- Unusual appointment times and timestamp patterns require further investigation.
-- Forecasting performance depends on the quality and completeness of historical records.
-- Predicted patient arrivals are estimates and may differ from actual hospital demand.
-- To get better results can also include other models as well
+Q1 (25th percentile): 2 patients
 
-## 9. Tools and Technologies
+Q3 (75th percentile): 16 patients
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Scikit-learn
-- Statsmodels
-- Jupyter Notebook
+| Category | Patient Count per Hour |
+|---|---:|
+| Low Demand | 0–2 |
+| Normal Demand | >2–16 |
+| High Demand | >16 |
 
-## 10. Expected Outcome
+These classification rules were applied to 672 forecasted hours.
 
-The project aims to provide OPD patient arrival patterns and forecast hourly patient demand. These predictions may help healthcare facilities plan staffing, manage workloads and allocate resources more effectively.
+## 9. Key Findings
 
-## 11. Dashboard (in Streamlit)
+The demand classification produced the following results:
+
+| Demand Category | Number of Hours | Percentage |
+|---|---:|---:|
+| Low Demand | 276 | 41.1% |
+| Normal Demand | 292 | 43.5% |
+| High Demand | 104 | 15.5% |
+| **Total** | **672** | **100%** |
+
+### Additional Findings
+
+| Finding | Result |
+|---|---|
+| High-Demand Hours | 104 hours |
+| Additional Potential Busy-Hour Warnings | 122 hours |
+| Highest Predicted Patient Arrival | 38.87 patients |
+| Date of Highest Predicted Arrival | 16 March 2026 |
+| Time of Highest Predicted Arrival | 06:00 |
+
+**Note:** The 122 additional potential busy-hour warnings identified using prediction intervals are separate from the 104 hours classified as High Demand.
+
+## 10. Dashboard (in Streamlit)
 <img width="1912" height="867" alt="image" src="https://github.com/user-attachments/assets/dd1b8fcb-bde3-4edd-b94c-8d9f33b0b262" />
 
 Streamlit link: https://opd-peak-hour-prediction-babpcreismecqjf7jsjie5.streamlit.app/
+
+## 11. Conclusion
+
+In this it uses machine learning and statistical forecasting methods to predict hourly patient arrivals in hospital OPDs. Random Forest performed best in terms of MAE and RMSE, while SARIMAX achieved prediction-interval coverage closer to the 90% target.
+
+Demand classification makes the predictions easier to understand by identifying Low, Normal, and High Demand periods. The dashboard helps hospital administrators plan staffing and resources during busy hours.
+
+## 12. Limitations and Future Improvements
+
+Forecast accuracy depends on the quality and availability of historical data.
+
+Unexpected events may cause sudden changes in patient arrivals.
+
+Prediction intervals do not guarantee that actual patient counts will fall within the predicted range.
+
+Future work can include more recent data and additional factors that influence patient arrivals.
+
+The forecasting models can be improved through further tuning and evaluation.
+
+## 13. Tools and Technologies
+
+Python
+
+Pandas
+
+NumPy
+
+Scikit-learn
+
+Statsmodels
+
+Matplotlib
+
+Jupyter Notebook
+
+Dashboard
+
+## 14. Project Outputs
+The project produces hourly patient arrival forecasts, prediction intervals, demand categories and peak-hour warnings. These outputs support the monitoring and planning of patient demand in hospital OPDs.
+
