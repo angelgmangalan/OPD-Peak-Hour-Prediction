@@ -1,0 +1,5 @@
+Model,MAE,RMSE,Interval coverage %
+Random Forest,3.77,6.66,80.1
+Same hour last week,3.93,7.36,
+3-week average,3.94,7.13,
+SARIMAX,4.44,7.26,89.1
