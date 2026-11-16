@@ -91,3 +91,8 @@ SARIMAX achieved coverage closer to the nominal 90% target.
 ## 10. Expected Outcome
 
 The project aims to provide OPD patient arrival patterns and forecast hourly patient demand. These predictions may help healthcare facilities plan staffing, manage workloads and allocate resources more effectively.
+
+## 11. Dashboard (in Streamlit)
+<img width="1912" height="867" alt="image" src="https://github.com/user-attachments/assets/dd1b8fcb-bde3-4edd-b94c-8d9f33b0b262" />
+
+Streamlit link: https://opd-peak-hour-prediction-babpcreismecqjf7jsjie5.streamlit.app/
